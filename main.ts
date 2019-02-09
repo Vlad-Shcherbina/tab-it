@@ -9,7 +9,7 @@ noteInput.value = p.get("note")
 favSelect.value = p.get("fav") || "yellow"
 
 function makeURL() {
-    return location.origin
+    return location.origin + location.pathname
     + "?title=" + encodeURIComponent(titleInput.value)
     + "&fav=" + encodeURIComponent(favSelect.value)
     + "&note=" + encodeURIComponent(noteInput.value)
