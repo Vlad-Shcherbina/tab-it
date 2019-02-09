@@ -4,7 +4,7 @@ var favSelect = document.getElementById("fav-select");
 var fav = document.getElementById("fav");
 var p = new URLSearchParams(window.location.search);
 titleInput.value = p.get("title");
-document.title = titleInput.value;
+document.title = titleInput.value || "tab-it";
 favSelect.value = p.get("fav") || "yellow";
 fav.href = favSelect.value + ".png";
 noteInput.value = p.get("note");
@@ -15,7 +15,7 @@ function makeURL() {
         + "&note=" + encodeURIComponent(noteInput.value);
 }
 titleInput.oninput = function (e) {
-    document.title = titleInput.value;
+    document.title = titleInput.value || "tab-it";
     history.replaceState({}, "", makeURL());
 };
 favSelect.oninput = function (e) {

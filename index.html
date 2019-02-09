@@ -1,20 +1,28 @@
-<link rel="shortcut icon" id="fav" href="yellow.png">
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" id="fav" href="yellow.png">
+    <style>
+      select, input, textarea {
+        margin: 1px 1px 0px 1px;
+        border: 1px solid gray;
+        padding: 1px;
+      }
+      input, textarea {
+        width: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <select id="fav-select">
+        <option value="yellow">yellow</option>
+        <option value="green">green</option>
+        <option value="blue">blue</option>
+      </select><br>
+      <input id="title" type="text" placeholder="title"><br>
+      <textarea id="note" type="text" rows=10></textarea>
 
-<style>
-  select, input, textarea {
-    margin: 1px 1px 0px 1px
-  }
-  input, textarea {
-    width: 200px
-  }
-</style>
-
-<select id="fav-select">
-  <option value="yellow">yellow</option>
-  <option value="green">green</option>
-  <option value="blue">blue</option>
-</select><br>
-<input id="title" type="text"><br>
-<textarea id="note" type="text" rows=10></textarea>
-
-<script src="main.js"></script>
+      <script src="main.js"></script>
+  </body>
+</html>
