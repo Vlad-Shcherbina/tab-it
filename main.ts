@@ -6,7 +6,7 @@ const fav = <HTMLLinkElement>document.getElementById("fav")
 const p = new URLSearchParams(window.location.search)
 
 titleInput.value = p.get("title")
-document.title = titleInput.value
+document.title = titleInput.value || "tab-it"
 
 favSelect.value = p.get("fav") || "yellow"
 fav.href = favSelect.value + ".png"
@@ -21,7 +21,7 @@ function makeURL() {
 }
 
 titleInput.oninput = (e) => {
-    document.title = titleInput.value
+    document.title = titleInput.value || "tab-it"
     history.replaceState({}, "", makeURL())
 }
 
