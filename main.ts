@@ -4,9 +4,14 @@ const favSelect = <HTMLSelectElement>document.getElementById("fav-select")
 const fav = <HTMLLinkElement>document.getElementById("fav")
 
 const p = new URLSearchParams(window.location.search)
+
 titleInput.value = p.get("title")
-noteInput.value = p.get("note")
+document.title = titleInput.value
+
 favSelect.value = p.get("fav") || "yellow"
+fav.href = favSelect.value + ".png"
+
+noteInput.value = p.get("note")
 
 function makeURL() {
     return location.origin + location.pathname
