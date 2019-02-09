@@ -4,8 +4,10 @@ var favSelect = document.getElementById("fav-select");
 var fav = document.getElementById("fav");
 var p = new URLSearchParams(window.location.search);
 titleInput.value = p.get("title");
-noteInput.value = p.get("note");
+document.title = titleInput.value;
 favSelect.value = p.get("fav") || "yellow";
+fav.href = favSelect.value + ".png";
+noteInput.value = p.get("note");
 function makeURL() {
     return location.origin + location.pathname
         + "?title=" + encodeURIComponent(titleInput.value)
